@@ -80,7 +80,7 @@ class Vigenere:
 
 		return ok
 
-	# vigenere standard -> return string
+	# encrypt vigenere -> return string
 	def ev(self, pt, is_extended = False):
 		# len plain text
 		lpt = len(pt)
@@ -94,7 +94,7 @@ class Vigenere:
 		
 		return ct if is_extended else ct.upper()
 
-	# vigenere standard -> return string
+	# decrypt vigenere -> return string
 	def dv(self, ct, is_extended = False):
 		# len chiper text
 		lct = len(ct)
