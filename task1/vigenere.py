@@ -1,4 +1,5 @@
 from file_handler import FileHandler
+import re
 
 class Vigenere:
 	# key
@@ -82,6 +83,9 @@ class Vigenere:
 
 	# encrypt vigenere -> return string
 	def ev(self, pt, is_extended = False):
+		# remove non-w character
+		if not is_extended:
+			pt = re.sub(r'\W', '', pt)
 		# len plain text
 		lpt = len(pt)
 		# new key
@@ -107,3 +111,6 @@ class Vigenere:
 			pt += self.gvc(self.decrypt(self.gcv(ct[i], is_extended), self.gcv(nk[i], is_extended), (256 if is_extended else 26)), is_extended)
 		
 		return pt if is_extended else pt.upper()
+
+
+
