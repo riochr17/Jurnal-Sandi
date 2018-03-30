@@ -53,7 +53,7 @@ class PlayFair:
 
 	def encrypt(self, pt):
 		ct = ''
-		bichars = self.get_bichar_of_string(pt.replace(self.missing_alphabet, self.replacing_alphabet)).split(self.bichar_delimiter)
+		bichars = self.get_bichar_of_string(pt.replace(self.missing_alphabet, self.replacing_alphabet).replace('\n', '')).split(self.bichar_delimiter)
 		for bichar in bichars:
 			ct += self.get_bicrypt(bichar, is_encrypt = True)
 

@@ -80,9 +80,9 @@ def main():
 		elif sys.argv[2] == "text":
 			vg = Vigenere(sys.argv[4])
 			if sys.argv[3] == "dec":
-				print vg.decrypt(open(sys.argv[5], 'r').read())
+				print vg.dv(open(sys.argv[5], 'r').read())
 			if sys.argv[3] == "enc":
-				ct = vg.encrypt(open(sys.argv[5], 'r').read())
+				ct = vg.ev(open(sys.argv[5], 'r').read())
 				if not FILE_OUTPUT:
 					print FileHandler().outputFormatter(ct, NUMBER_SEPARATED) if NUMBER_SEPARATED else ct
 				else:
@@ -106,9 +106,9 @@ def main():
 		elif sys.argv[2] == "text":
 			vg = Vigenere(sys.argv[4])
 			if sys.argv[3] == "dec":
-				print vg.decrypt(open(sys.argv[5], 'r').read(), is_extended = True)
+				print vg.dv(open(sys.argv[5], 'r').read(), is_extended = True)
 			if sys.argv[3] == "enc":
-				ct = vg.encrypt(open(sys.argv[5], 'r').read(), is_extended = True)
+				ct = vg.ev(open(sys.argv[5], 'r').read(), is_extended = True)
 				if not FILE_OUTPUT:
 					print FileHandler().outputFormatter(ct, NUMBER_SEPARATED) if NUMBER_SEPARATED else ct
 				else:
